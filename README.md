@@ -39,3 +39,13 @@ graph TD
     PC --> ED3["<b>EFECTO DIRECTO</b><br/>Imposibilidad de realizar estudios de efectividad de dispositivos"]:::efectoDir
     ED3 --> EI3["<b>EFECTO INDIRECTO</b><br/>Aumento en la carga de atención por emergencias o revisiones tardías"]:::efectoInd
     EI3 --> CAT3["REGISTRO DE DATOS"]:::cat
+
+%% Eje 4: Impacto Financiero y Recursos
+    PC --> ED4["<b>EFECTO DIRECTO</b><br/>Reajustes tardíos y deterioro acelerado del dispositivo"]:::efectoDir
+    ED4 --> EI4["<b>EFECTO INDIRECTO</b><br/>Sobrecostos para el sistema de salud y el paciente por sustituciones prematuras"]:::efectoInd
+    EI4 --> CAT4["IMPACTO SOCIOECONÓMICO"]:::cat
+
+    %% Eje 5: Dimensión Psicosocial
+    PC --> ED5["<b>EFECTO DIRECTO</b><br/>Frustración y aislamiento del usuario ante fallos no atendidos"]:::efectoDir
+    ED5 --> EI5["<b>EFECTO INDIRECTO</b><br/>Rechazo psicológico permanente del dispositivo y pérdida de autonomía"]:::efectoInd
+    EI5 --> CAT5["SALUD MENTAL Y BIENESTAR"]:::cat
