@@ -30,6 +30,9 @@ graph BT
     %% Categoría 4: Comunicación Multidisciplinaria
     CI4["CAUSA INDIRECTA\nFalta de canales centralizados para compartir la historia clínica ortopédica"]:::causaInd --> CD4["CAUSA DIRECTA\nDescoordinación entre el equipo multidisciplinario (protesista, fisio, médico)"]:::causa
     CD4 --> PC
+    %% Categoría 5: Tecnología y Monitoreo
+    CI5["CAUSA INDIRECTA\nBajo uso de dispositivos o sensores (wearables/IoT) que permitan captar datos objetivos entre citas"]:::causaInd --> CD5["CAUSA DIRECTA\nAusencia de tecnología de monitoreo remoto y continuo del estado del paciente"]:::causa
+    CD5 --> PC
 
 
     %% ==========================================
