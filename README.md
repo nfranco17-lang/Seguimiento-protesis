@@ -34,6 +34,9 @@ graph BT
     CI5["CAUSA INDIRECTA\nBajo uso de dispositivos o sensores (wearables/IoT) que permitan captar datos objetivos entre citas"]:::causaInd --> CD5["CAUSA DIRECTA\nAusencia de tecnología de monitoreo remoto y continuo del estado del paciente"]:::causa
     CD5 --> PC
 
+    %% Categoría 5: Tecnología y Monitoreo
+    CI5["CAUSA INDIRECTA\nBajo uso de dispositivos o sensores (wearables/IoT) que permitan captar datos objetivos entre citas"]:::causaInd --> CD5["CAUSA DIRECTA\nAusencia de tecnología de monitoreo remoto y continuo del estado del paciente"]:::causa
+    CD5 --> PC
 
 
     %% ==========================================
