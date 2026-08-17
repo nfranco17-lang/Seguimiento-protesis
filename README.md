@@ -1,5 +1,4 @@
-```mermaid
-graph TD
+graph BT
     %% Estilos de Nodos
     classDef central fill:#1f2937,stroke:#111827,color:#ffffff,font-weight:bold;
     classDef causa fill:#ecfdf5,stroke:#059669,color:#065f46;
@@ -8,10 +7,13 @@ graph TD
     classDef efectoInd fill:#f0fdf4,stroke:#22c55e,color:#166534;
     classDef cat fill:#15803d,stroke:#166534,color:#ffffff,font-weight:bold;
 
-    %% Problema Central
+    %% --- PROBLEMA CENTRAL (Tronco) ---
     PC["<b>PROBLEMA CENTRAL</b><br/>Inadecuado seguimiento y registro de la evolución de pacientes con prótesis"]:::central
 
-    %% --- CAUSAS (Parte Inferior) ---
+    %% ==========================================
+    %% --- CAUSAS (Raíces - Parte Inferior) ---
+    %% ==========================================
+
     %% Categoría 1: Evaluación y Métricas
     CI1["<b>CAUSA INDIRECTA</b><br/>Procesos de ajuste largos e iterativos sin datos objetivos"]:::causaInd --> CD1["<b>CAUSA DIRECTA</b><br/>Falta de mecanismos de feedback directo sobre la prótesis"]:::causa
     CD1 --> PC
@@ -24,7 +26,15 @@ graph TD
     CI3["<b>CAUSA INDIRECTA</b><br/>Historial de seguimiento manual, fragmentado o disperso"]:::causaInd --> CD3["<b>CAUSA DIRECTA</b><br/>Dependencia exclusiva de citas presenciales muy espaciadas"]:::causa
     CD3 --> PC
 
-    %% --- EFECTOS (Parte Superior) ---
+    %% NUEVA Categoría 4: Comunicación Multidisciplinaria
+    CI4["<b>CAUSA INDIRECTA</b><br/>Falta de canales centralizados para compartir la historia clínica ortopédica"]:::causaInd --> CD4["<b>CAUSA DIRECTA</b><br/>Descoordinación entre el equipo multidisciplinario (protesista, fisio, médico)"]:::causa
+    CD4 --> PC
+
+
+    %% ==========================================
+    %% --- EFECTOS (Ramas - Parte Superior) ---
+    %% ==========================================
+
     %% Eje 1: Diseño y Adaptación
     PC --> ED1["<b>EFECTO DIRECTO</b><br/>Mala adaptación progresiva del paciente a la prótesis"]:::efectoDir
     ED1 --> EI1["<b>EFECTO INDIRECTO</b><br/>Dificultad en la identificación temprana de complicaciones y molestias"]:::efectoInd
@@ -40,7 +50,7 @@ graph TD
     ED3 --> EI3["<b>EFECTO INDIRECTO</b><br/>Aumento en la carga de atención por emergencias o revisiones tardías"]:::efectoInd
     EI3 --> CAT3["REGISTRO DE DATOS"]:::cat
 
-%% Eje 4: Impacto Financiero y Recursos
+    %% Eje 4: Impacto Financiero y Recursos
     PC --> ED4["<b>EFECTO DIRECTO</b><br/>Reajustes tardíos y deterioro acelerado del dispositivo"]:::efectoDir
     ED4 --> EI4["<b>EFECTO INDIRECTO</b><br/>Sobrecostos para el sistema de salud y el paciente por sustituciones prematuras"]:::efectoInd
     EI4 --> CAT4["IMPACTO SOCIOECONÓMICO"]:::cat
@@ -49,3 +59,8 @@ graph TD
     PC --> ED5["<b>EFECTO DIRECTO</b><br/>Frustración y aislamiento del usuario ante fallos no atendidos"]:::efectoDir
     ED5 --> EI5["<b>EFECTO INDIRECTO</b><br/>Rechazo psicológico permanente del dispositivo y pérdida de autonomía"]:::efectoInd
     EI5 --> CAT5["SALUD MENTAL Y BIENESTAR"]:::cat
+
+    %% NUEVO Eje 6: Rehabilitación y Coordinación
+    PC --> ED6["<b>EFECTO DIRECTO</b><br/>Tratamientos fragmentados y decisiones clínicas desalineadas"]:::efectoDir
+    ED6 --> EI6["<b>EFECTO INDIRECTO</b><br/>Retraso significativo en los tiempos de rehabilitación integral y alta clínica"]:::efectoInd
+    EI6 --> CAT6["COORDINACIÓN CLÍNICA"]:::cat
