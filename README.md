@@ -1,48 +1,64 @@
 ```mermaid
 graph BT
-    %% Estilos de Nodos
-    classDef central fill:#1f2937,stroke:#111827,color:#ffffff,font-weight:bold;
-    classDef causa fill:#ecfdf5,stroke:#059669,color:#065f46;
-    classDef causaInd fill:#f3f4f6,stroke:#4b5563,color:#1f2937;
-    classDef efectoDir fill:#dcfce7,stroke:#16a34a,color:#14532d;
-    classDef efectoInd fill:#f0fdf4,stroke:#22c55e,color:#166534;
-    classDef cat fill:#15803d,stroke:#166534,color:#ffffff,font-weight:bold;
 
-    %% --- PROBLEMA CENTRAL (Tronco) ---
-    PC["PROBLEMA CENTRAL\nInadecuado seguimiento y registro de la evolución de pacientes con prótesis"]:::central
+    %% PROBLEMA CENTRAL
+    PC["<b>PROBLEMA CENTRAL</b><br/>Inadecuado seguimiento y registro de la evolución<br/>de pacientes con prótesis"]
 
-    %% ==========================================
-    %% --- CAUSAS (Raíces - Parte Inferior) ---
-    %% ==========================================
+    %% CAUSAS INDIRECTAS
+    CI1["<b>CAUSA INDIRECTA</b><br/>Ausencia de herramientas digitales simples<br/>para el autoreporte diario"]
+    CI2["<b>CAUSA INDIRECTA</b><br/>Historial de seguimiento manual,<br/>disperso o en papel"]
+    CI3["<b>CAUSA INDIRECTA</b><br/>Bajo uso de sistemas o sensores<br/>(IoT/wearables) entre consultas"]
 
-    %% Categoría 1: Evaluación y Métricas
-    CI1["CAUSA INDIRECTA\nProcesos de ajuste largos e iterativos sin datos objetivos"]:::causaInd --> CD1["CAUSA DIRECTA\nFalta de mecanismos de feedback directo sobre la prótesis"]:::causa
-    CD1 --> PC
+    %% CAUSAS DIRECTAS
+    CD1["<b>CAUSA DIRECTA</b><br/>Registro ineficaz de dolor,<br/>comodidad y frecuencia de uso"]
+    CD2["<b>CAUSA DIRECTA</b><br/>Dependencia exclusiva de citas<br/>presenciales muy espaciadas"]
+    CD3["<b>CAUSA DIRECTA</b><br/>Ausencia de tecnología de monitoreo<br/>remoto del estado del paciente"]
 
-    %% Categoría 2: Registro del Paciente
-    CI2["CAUSA INDIRECTA\nAusencia de herramientas fáciles para el auto-reporte diario"]:::causaInd --> CD2["CAUSA DIRECTA\nRegistro ineficaz de dolor, nivel de comodidad y frecuencia de uso"]:::causa
-    CD2 --> PC
+    %% EFECTOS DIRECTOS
+    ED1["<b>EFECTO DIRECTO</b><br/>Mala adaptación progresiva y<br/>malestar físico continuo"]
+    ED2["<b>EFECTO DIRECTO</b><br/>Dificultad en la identificación<br/>temprana de molestias y fallas"]
+    ED3["<b>EFECTO DIRECTO</b><br/>Casos de desajuste protésico<br/>sin intervención oportuna"]
 
-    %% Categoría 3: Gestión e Historial
-    CI3["CAUSA INDIRECTA\nHistorial de seguimiento manual, fragmentado o disperso"]:::causaInd --> CD3["CAUSA DIRECTA\nDependencia exclusiva de citas presenciales muy espaciadas"]:::causa
-    CD3 --> PC
+    %% EFECTOS INDIRECTOS
+    EI1["<b>EFECTO INDIRECTO</b><br/>Abandono o uso intermitente de la<br/>prótesis por parte del paciente"]
+    EI2["<b>EFECTO INDIRECTO</b><br/>Aparición de complicaciones graves<br/>(úlceras por presión, lesiones)"]
+    EI3["<b>EFECTO INDIRECTO</b><br/>Sobrecostos en el sistema por<br/>reingresos o intervenciones de urgencia"]
 
-    %% Categoría 4: Comunicación Multidisciplinaria
-    CI4["CAUSA INDIRECTA\nFalta de canales centralizados para compartir la historia clínica ortopédica"]:::causaInd --> CD4["CAUSA DIRECTA\nDescoordinación entre el equipo multidisciplinario (protesista, fisio, médico)"]:::causa
-    CD4 --> PC
-    %% Categoría 5: Tecnología y Monitoreo
-    CI5["CAUSA INDIRECTA\nBajo uso de dispositivos o sensores (wearables/IoT) que permitan captar datos objetivos entre citas"]:::causaInd --> CD5["CAUSA DIRECTA\nAusencia de tecnología de monitoreo remoto y continuo del estado del paciente"]:::causa
-    CD5 --> PC
+    %% CATEGORÍAS TEMÁTICAS (ENCABEZADOS)
+    CAT1["<b>ADAPTACIÓN Y CONFORT</b>"]
+    CAT2["<b>SALUD Y PREVENCIÓN</b>"]
+    CAT3["<b>GESTIÓN CLÍNICA</b>"]
 
+    %% CONEXIONES DE CAUSAS (Abajo -> Centro)
+    CI1 --> CD1 --> PC
+    CI2 --> CD2 --> PC
+    CI3 --> CD3 --> PC
 
-    %% ==========================================
-    %% --- EFECTOS (Ramas - Parte Superior) ---
-    %% ==========================================
+    %% CONEXIONES DE EFECTOS (Centro -> Arriba)
+    PC --> ED1 --> EI1 --> CAT1
+    PC --> ED2 --> EI2 --> CAT2
+    PC --> ED3 --> EI3 --> CAT3
 
-    %% Eje 1: Diseño y Adaptación
-    PC --> ED1["EFECTO DIRECTO\nMala adaptación progresiva del paciente a la prótesis"]:::efectoDir
-    ED1 --> EI1["EFECTO INDIRECTO\nDificultad en la identificación temprana de complicaciones y molestias"]:::efectoInd
-    EI1 --> CAT1["SEGUIMIENTO MÉDICO"]:::cat
+    %% ESTILOS VISUALES
+    style PC fill:#2d3748,stroke:#1a202c,stroke-width:2px,color:#fff
+    
+    style CD1 fill:#81e6d9,stroke:#319795,color:#1a202c
+    style CD2 fill:#81e6d9,stroke:#319795,color:#1a202c
+    style CD3 fill:#81e6d9,stroke:#319795,color:#1a202c
 
-    %% Eje 2: Uso y Com
+    style CI1 fill:#e2e8f0,stroke:#cbd5e0,color:#2d3748
+    style CI2 fill:#e2e8f0,stroke:#cbd5e0,color:#2d3748
+    style CI3 fill:#e2e8f0,stroke:#cbd5e0,color:#2d3748
+
+    style ED1 fill:#9ae6b4,stroke:#38a169,color:#1a202c
+    style ED2 fill:#9ae6b4,stroke:#38a169,color:#1a202c
+    style ED3 fill:#9ae6b4,stroke:#38a169,color:#1a202c
+
+    style EI1 fill:#e2e8f0,stroke:#cbd5e0,color:#2d3748
+    style EI2 fill:#e2e8f0,stroke:#cbd5e0,color:#2d3748
+    style EI3 fill:#e2e8f0,stroke:#cbd5e0,color:#2d3748
+
+    style CAT1 fill:#2f855a,stroke:#22543d,color:#fff
+    style CAT2 fill:#2f855a,stroke:#22543d,color:#fff
+    style CAT3 fill:#2f855a,stroke:#22543d,color:#fff
 
